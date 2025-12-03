@@ -1,10 +1,11 @@
-# Blåhaj
+# Blåhaj Polymerized
 
 **A minecraft mod that adds the IKEA BLÅHAJ Soft toy shark and a giant bread pillow as items.**
 
 - When you craft or rename a plushie, it'll have your username attached to it.
 - You can place the plushies down!
-- This mod is required on both server and client.
+- This mod only needs to be installed on the server.
+- Requires [Polymer](https://github.com/Patbox/polymer)
 
 ## Content
 
