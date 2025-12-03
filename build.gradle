@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.11-SNAPSHOT'
+	id 'fabric-loom' version '1.14.1' // current Loom for 1.21.10 from “Latest Versions”:contentReference[oaicite:10]{index=10}
 	id 'maven-publish'
 }
 
@@ -11,14 +11,25 @@ base {
 }
 
 repositories {
-
+    maven { url 'https://maven.nucleoid.xyz' }
+	maven { url 'https://maven.tomalbrc.de' }
+	maven { url = "https://maven.terraformersmc.com/" }
+	maven { url = "https://maven.nucleoid.xyz" }
+	maven { url 'https://maven.ladysnake.org/releases' }
 }
 
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}+${project.minecraft_version}"
+	modImplementation include("eu.pb4:polymer-core:[${project.polymer_version}+${project.minecraft_version}]")
+	modImplementation include("eu.pb4:polymer-virtual-entity:[${project.polymer_version}+${project.minecraft_version}]")
+	modImplementation include("eu.pb4:polymer-resource-pack:[${project.polymer_version}+${project.minecraft_version}]")
+	modImplementation include("eu.pb4:polymer-resource-pack-extras:[${project.polymer_version}+${project.minecraft_version}]")
+	modImplementation ("eu.pb4:polymer-autohost:${project.polymer_version}+${project.minecraft_version}")
+	modImplementation include("eu.pb4:factorytools:[${project.factorytools_version}+${project.minecraft_version}]")
+
 }
 
 processResources {
@@ -59,5 +70,6 @@ publishing {
 	}
 
 	repositories {
+
 	}
 }
